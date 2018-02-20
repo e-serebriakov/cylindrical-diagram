@@ -1,0 +1,20 @@
+{
+  "name": "cylindrical-diagram",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e-serebriakov/cylindrical-diagram.git"
+  },
+  "keywords": [],
+  "author": "Eugene Serebriakov <eserebriakov@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/e-serebriakov/cylindrical-diagram/issues"
+  },
+  "homepage": "https://github.com/e-serebriakov/cylindrical-diagram#readme"
+}
