@@ -4,9 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const env = process.env.NODE_ENV;
 const isProd = process.env.NODE_ENV === 'prod';
-const isDev = !isProd;
 
 function getDevtool() {
   let devtool = 'source-map';
@@ -25,8 +23,6 @@ function getPlugins() {
       dry: false,
     }),
     new webpack.DefinePlugin({
-      WP_NODE_ENV: JSON.stringify(env),
-      WP_IS_DEV: isDev,
       'process.env': {
         NODE_ENV: JSON.stringify(isProd ? 'production' : 'development'),
       },
@@ -79,13 +75,19 @@ module.exports = {
             'stylus-loader',
           ],
         }),
+        exclude: /\/node_modules\//,
       }
     ],
   },
 
   devServer: {
     port: 8080,
-    inline: true,
+    hot: true,
+    watchOptions: {
+      ignored: /node_modules/,
+      poll: true,
+
+    },
   },
 
   stats: {

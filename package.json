@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:dev": "webpack-dev-server -d --hot --inline",
+    "start:dev": "webpack-dev-server -d --hot",
     "static:watch": "webpack --watch --progress",
-    "build": "export NODE_ENV=dev; webpack"
+    "build": "export NODE_ENV=dev; webpack",
+    "build:prod": "export NODE_ENV=prod; webpack"
   },
   "repository": {
     "type": "git",
