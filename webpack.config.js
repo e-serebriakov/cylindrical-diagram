@@ -4,6 +4,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const { HOST, PORTS } = require('./config/config');
+
 const isProd = process.env.NODE_ENV === 'prod';
 
 function getDevtool() {
@@ -40,7 +42,7 @@ function getPlugins() {
 }
 
 module.exports = {
-  context: __dirname + '/src',
+  context: __dirname + '/src/client',
 
   entry: {
     index: './app.js',
@@ -81,12 +83,12 @@ module.exports = {
   },
 
   devServer: {
-    port: 8080,
+    host: HOST,
+    port: PORTS.CLIENT,
     hot: true,
     watchOptions: {
       ignored: /node_modules/,
       poll: true,
-
     },
   },
 
