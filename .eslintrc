@@ -4,14 +4,13 @@
     "sourceType": "module",
     "allowImportExportEverywhere": false
   },
-  "extends": "airbnb",
-  "env": {
-    "node": true,
-    "mocha": true,
-    "browser": true,
-    "commonjs": true,
-    "es6": true
-  },
+  "extends": [
+    "airbnb",
+    "plugin:flowtype/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
   "rules": {
     "no-console": 2,
     "strict": ["error", "never"],
@@ -27,5 +26,9 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
     "object-curly-newline": "off",
     "no-mixed-operators": 0
+  },
+  "globals": {
+    "document": true,
+    "window": true
   }
 }

@@ -1,9 +1,15 @@
+/* @flow */
+
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import './cylinder.styl';
 
-const Animated = ({ children, ...props }) => (
+type AnimatedPropsType = {
+  children: any,
+}
+
+const Animated = ({ children, ...props }: AnimatedPropsType) => (
   <CSSTransition
     {...props}
     timeout={250}
@@ -16,7 +22,14 @@ const Animated = ({ children, ...props }) => (
   </CSSTransition>
 );
 
-const Cylinder = ({ value, opacity, topSign, bottomSign }) => (
+type CylinderPropsType = {
+  value: number,
+  opacity: number,
+  topSign: string,
+  bottomSign: string
+};
+
+const Cylinder = ({ value, opacity, topSign, bottomSign }: CylinderPropsType) => (
   <Animated in>
     <div className={`cylinder cylinder--height_${value}`}>
       <div className={`cylinder__shape cylinder__shape--opacity_${opacity}`} >

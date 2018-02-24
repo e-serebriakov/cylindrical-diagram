@@ -33,23 +33,21 @@ function getPlugins() {
   ];
 
   if (isProd) {
-    plugins.push(
-      new UglifyJSPlugin()
-    );
+    plugins.push(new UglifyJSPlugin());
   }
 
   return plugins;
 }
 
 module.exports = {
-  context: __dirname + '/src/client',
+  context: `${__dirname}/src/client`,
 
   entry: {
     index: './app.js',
   },
 
   output: {
-    path: __dirname + '/public',
+    path: `${__dirname}/public`,
     filename: '[name].js',
     publicPath: '/public/',
   },
@@ -78,7 +76,7 @@ module.exports = {
           ],
         }),
         exclude: /\/node_modules\//,
-      }
+      },
     ],
   },
 
