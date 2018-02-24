@@ -3,6 +3,10 @@
 ## instructions
 
 #### development
+* install dependencies
+```
+    npm i
+```
 * start server
 ```
     npm run watch:server
