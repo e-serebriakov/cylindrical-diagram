@@ -1,29 +1,33 @@
-import React, { Component } from 'react';
-import AnimateHeight from 'react-animate-height';
+import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 import './cylinder.styl';
 
-export default class Cylinder extends Component {
-  /**
-   * @inheritDoc
-   */
-  render() {
-    const {
-      value,
-      opacity,
-      topSign,
-      bottomSign,
-    } = this.props;
-    const heightClass = value ? `cylinder--height_${value}` : '';
-    const opacityClass = opacity ? `cylinder__shape--opacity_${opacity}` : '';
+const Animated = ({ children, ...props }) => (
+  <CSSTransition
+    {...props}
+    timeout={250}
+    classNames={{
+      appear: 'folded',
+    }}
+    appear
+  >
+    {children}
+  </CSSTransition>
+);
 
-    return (
-      <div className={ `cylinder ${heightClass}` }>
-        <div className={ `cylinder__shape ${opacityClass}` } />
-        <p className="cylinder__sign cylinder__sign--top">Top Sign: {topSign}</p>
-        <p className="cylinder__sign cylinder__sign--bottom">Bottom Sign: {bottomSign}</p>
+const Cylinder = ({ value, opacity, topSign, bottomSign }) => (
+  <Animated in>
+    <div className={`cylinder cylinder--height_${value}`}>
+      <div className={`cylinder__shape cylinder__shape--opacity_${opacity}`} >
+        <div className="cylinder__cap cylinder__cap--top" />
+        <div className="cylinder__blic" />
+        <div className="cylinder__cap cylinder__cap--bottom" />
       </div>
-    )
-  }
-}
+      <p className="cylinder__sign cylinder__sign--top">Top Sign: {topSign}</p>
+      <p className="cylinder__sign cylinder__sign--bottom">{bottomSign}</p>
+    </div>
+  </Animated>
+);
 
+export default Cylinder;

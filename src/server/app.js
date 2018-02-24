@@ -20,5 +20,5 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
 
 app.listen(SERVER, () => {
-  console.log(`Go to http://${HOST}:${SERVER}/graphiql to run queries!`);
+  console.log(`Go to http://${HOST}:${SERVER}/graphiql to run queries!`); // eslint-disable-line no-console
 });

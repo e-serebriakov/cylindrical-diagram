@@ -14,6 +14,17 @@ const statisticsQuery = gql`query statistics {
   }
 }`;
 
+/**
+ * Return random value from min to max
+ *
+ * @param {number} min
+ * @param {number} max
+ * @return {number}
+ */
+const randomValue = (min, max) => (
+  Math.floor(Math.random() * (max - min + 1) + min)
+);
+
 class Diagram extends Component {
   /**
    * @inheritDoc
@@ -26,24 +37,27 @@ class Diagram extends Component {
     } = this.props.data;
 
     if (loading) {
-      return <p>Loading...</p>
+      return <p>Loading...</p>;
     }
 
     if (errors) {
-      return <p>Something went wrong. Try again or try later. :(</p>
+      return <p>Something went wrong. Try again or try later. :(</p>;
     }
 
     return (
       <div className="diagram">
-        { statistics.map(({ id, ...itemData }) => (
-          <Cylinder
-            opacity={ Math.round((Math.random() * 100)) } // исключительно для примера
-            key={ `diagram-cylinder-${id}` }
-            { ...itemData }
-          />
-        )) }
+        <h3 className="diagram__title">{ this.props.title }</h3>
+        <div className="diagram__items">
+          { statistics.map(({ id, ...itemData }) => (
+            <Cylinder
+              opacity={randomValue(50, 100)} // исключительно для примера
+              key={`diagram-cylinder-${id}`}
+              {...itemData}
+            />
+          )) }
+        </div>
       </div>
-    )
+    );
   }
 }
 
