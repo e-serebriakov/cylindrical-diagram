@@ -13,7 +13,7 @@
 ```
 * start webpack-dev-server
 ```
-    num run watch:client
+    npm run watch:client
 ```
 * open `http://0.0.0:8080/`
 * ESLint and flow check (optional)
