@@ -16,7 +16,7 @@
     npm run watch:client
 ```
 * open `http://0.0.0:8080/`
-* ESLint and flow check (optional)
+* ESLint and flow checks (optional)
 ```
  npm run check
 ```
