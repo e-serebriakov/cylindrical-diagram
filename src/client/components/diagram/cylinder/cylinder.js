@@ -34,7 +34,7 @@ const Cylinder = ({ value, opacity, topSign, bottomSign }: CylinderPropsType) =>
     <div className={`cylinder cylinder--height_${value}`}>
       <div className={`cylinder__shape cylinder__shape--opacity_${opacity}`} >
         <div className="cylinder__cap cylinder__cap--top" />
-        <div className="cylinder__blic" />
+        <div className="cylinder__glare" />
         <div className="cylinder__cap cylinder__cap--bottom" />
       </div>
       <p className="cylinder__sign cylinder__sign--top">Top Sign: {topSign}</p>
