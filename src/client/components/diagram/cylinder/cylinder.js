@@ -32,7 +32,7 @@ type CylinderPropsType = {
 const Cylinder = ({ value, opacity, topSign, bottomSign }: CylinderPropsType) => (
   <Animated in>
     <div className={`cylinder cylinder--height_${value}`}>
-      <div className={`cylinder__shape cylinder__shape--opacity_${opacity}`} >
+      <div className="cylinder__shape" style={{ opacity: opacity / 100 }}>
         <div className="cylinder__cap cylinder__cap--top" />
         <div className="cylinder__glare" />
         <div className="cylinder__cap cylinder__cap--bottom" />
