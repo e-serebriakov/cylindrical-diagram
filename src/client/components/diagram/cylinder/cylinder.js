@@ -14,7 +14,7 @@ const Animated = ({ children, ...props }: AnimatedPropsType) => (
     {...props}
     timeout={250}
     classNames={{
-      appear: 'folded',
+      appear: 'cylinder--folded',
     }}
     appear
   >
