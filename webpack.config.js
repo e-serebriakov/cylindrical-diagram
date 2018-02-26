@@ -25,6 +25,8 @@ function getPlugins() {
       dry: false,
     }),
     new webpack.DefinePlugin({
+      HOST: JSON.stringify(HOST),
+      SERVER_PORT: JSON.stringify(PORTS.SERVER),
       'process.env': {
         NODE_ENV: JSON.stringify(isProd ? 'production' : 'development'),
       },

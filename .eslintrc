@@ -29,6 +29,8 @@
   },
   "globals": {
     "document": true,
-    "window": true
+    "window": true,
+    "HOST": true,
+    "SERVER_PORT": true
   }
 }
