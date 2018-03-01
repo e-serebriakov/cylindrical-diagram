@@ -11,7 +11,7 @@ type StatisticsType = {
 type DataType = {
   loading: boolean,
   statistics: StatisticsType[],
-  errors: Object,
+  error: Object,
 };
 
 export type DiagramPropsType = {

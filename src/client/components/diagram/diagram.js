@@ -33,14 +33,14 @@ const Diagram = ({ title, data }: DiagramPropsType) => {
   const {
     loading,
     statistics,
-    errors,
+    error,
   } = data;
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
-  if (errors) {
+  if (error) {
     return <p>Something went wrong. Try again or try later. :(</p>;
   }
 
